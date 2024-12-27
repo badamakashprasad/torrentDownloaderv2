@@ -2,7 +2,7 @@ requests>=2.26.0,<3.0.0
 beautifulsoup4>=4.9.3
 selenium>=4.0.0
 redis>=4.5.0
-python-dotenv
-aiohttp
-cinemagoer
-pyjsparser
+python-dotenv>=0.19.0
+aiohttp>=3.7.4
+cinemagoer>=5.0.3
+pyjsparser>=2.7.1
