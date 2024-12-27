@@ -1,12 +1,12 @@
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 from common.Api import Api 
 from common.ApiError import APIError
 
 class YtsClient:
-    def __init__(self):
+    def __init__(self,limit:Optional[int],page:Optional[int]):
         self.site = "YTS"
         self.api = Api(self.site)
-        self.data = self.api.get_response()["data"]
+        self.data = self.api.get_response(limit,page)["data"]
         
 
     def get_torrents(self) -> List[Dict[str, Any]]:

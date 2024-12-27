@@ -19,3 +19,36 @@ class ApiSiteEndpoints(Dict):
         "eztv" : "api/get-torrents",
         "yts" : "api/v2/list_movies.json"
     }
+
+class ScraperEndpoints(Dict):
+    x1337 = {
+        "prefix" : "popular",
+        "delimiter" : "-",
+        "categories": [
+            "anime",
+            "music",
+            "games",
+            "tv",
+            "apps",
+            "documentaries",
+            "other",
+            "xxx",
+            "movies",
+        ]
+    }
+
+    torlock = {
+        "suffix" : "html",
+        "delimiter" : ".",
+        "categories": [
+            "movies",
+            "television",
+            "games",
+            "music",
+            "software",
+            "anime",
+            "ebooks",
+            "adult",
+            "other"
+        ]
+    }

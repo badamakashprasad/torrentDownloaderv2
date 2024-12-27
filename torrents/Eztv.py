@@ -1,12 +1,12 @@
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 from common.Api import Api 
 from common.ApiError import APIError
 
 class EzTvClient:
-    def __init__(self):
+    def __init__(self,limit:Optional[int],page:Optional[int]):
         self.site = "EZTV"
         self.api = Api(self.site)
-        self.data = self.api.get_response()
+        self.data = self.api.get_response(limit,page)
         
 
     def get_torrents(self) -> List[Dict[str, Any]]:

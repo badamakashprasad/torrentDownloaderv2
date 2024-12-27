@@ -21,3 +21,8 @@ class TestEzTvClient(unittest.TestCase):
         logger.info("Running all tests")
         unittest.main()
         
+    def runTest(self):
+        self.test_get_torrents()
+        self.test_get_total()
+        self.test_get_total_pages()
+    

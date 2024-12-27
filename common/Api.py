@@ -31,7 +31,7 @@ class Api(PaginationParams):
         return urljoin(self.base_url, self.endpoints)
 
 
-    def get_response(self) -> Dict[str, Any]:
+    def get_response(self,limit:Optional[int],page:Optional[int]) -> Dict[str, Any]:
         """
         Fetch data from the API
         
@@ -41,6 +41,10 @@ class Api(PaginationParams):
         Raises:
             APIError: If the API request fails
         """
+        if limit:
+            self.set_limit(limit)
+        if page:
+            self.set_page(page)    
         try:
             url = self.get_url()
             response = self._session.get(url, params=self.params)
